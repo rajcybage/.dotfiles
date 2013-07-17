@@ -1,0 +1,21 @@
+script: 'ci/travis.rb'
+before_install:
+  - gem install bundler
+rvm:
+  - 1.9.3
+  - 2.0.0
+env:
+  - "GEM=rails"
+ notifications:
+  email: false
+  irc:
+    on_success: change
+    on_failure: always
+    channels:
+      - "irc.freenode.org#rails-contrib"
+  campfire:
+    on_success: change
+    on_failure: always
+    rooms:
+      - secure: "WER455sERESD223231=12SDSad23a2"
+bundler_args: --path vendor/bundle --without test
